@@ -1,17 +1,17 @@
 /**
- *    Copyright 2009-2020 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
+ * Copyright 2009-2020 the original author or authors.
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package org.apache.ibatis.session;
 
@@ -96,45 +96,218 @@ import org.apache.ibatis.type.TypeHandler;
 import org.apache.ibatis.type.TypeHandlerRegistry;
 
 /**
+ * 配置
+ *
  * @author Clinton Begin
  */
 public class Configuration {
 
+  /**
+   * 环境变量
+   */
   protected Environment environment;
 
+  /**
+   * 是否允许在嵌套语句中使用分页（RowBounds）。如果允许使用则设置为 false。
+   * 可选择：true | false
+   * 默认值：false
+   */
   protected boolean safeRowBoundsEnabled;
+
+  /**
+   * 是否允许在嵌套语句中使用结果处理器（ResultHandler）。如果允许使用则设置为 false。
+   * 可选择：true | false
+   * 默认值：true
+   */
   protected boolean safeResultHandlerEnabled = true;
+
+  /**
+   * 是否开启驼峰命名自动映射，即从经典数据库列名 A_COLUMN 映射到经典 Java 属性名 aColumn。
+   * 可选择：true | false
+   * 默认值：false
+   */
   protected boolean mapUnderscoreToCamelCase;
+
+  /**
+   * 开启时，任一方法的调用都会加载该对象的所有延迟加载属性。 否则，每个延迟加载属性会按需加载（参考 lazyLoadTriggerMethods)。
+   * 可选择：true | false
+   * 默认值：false（在 3.4.1 及之前的版本中默认为 true）
+   */
   protected boolean aggressiveLazyLoading;
+
+  /**
+   * 是否允许单个语句返回多结果集（需要数据库驱动支持）。
+   * 可选择：true | false
+   * 默认值：true
+   */
   protected boolean multipleResultSetsEnabled = true;
+
+  /**
+   * 允许 JDBC 支持自动生成主键，需要数据库驱动支持。如果设置为 true，将强制使用自动生成主键。尽管一些数据库驱动不支持此特性，但仍可正常工作（如 Derby）。
+   * 可选择：true | false
+   * 默认值：false
+   */
   protected boolean useGeneratedKeys;
+
+  /**
+   * 使用列标签代替列名。实际表现依赖于数据库驱动，具体可参考数据库驱动的相关文档，或通过对比测试来观察。
+   * 可选择：true | false
+   * 默认值：true
+   */
   protected boolean useColumnLabel = true;
+
+  /**
+   * 全局性地开启或关闭所有映射器配置文件中已配置的任何缓存。
+   * 可选择：true | false
+   * 默认值：true
+   */
   protected boolean cacheEnabled = true;
+
+  /**
+   * 指定当结果集中值为 null 的时候是否调用映射对象的 setter（map 对象时为 put）方法，这在依赖于 Map.keySet() 或 null 值进行初始化时比较有用。注意基本类型（int、boolean 等）是不能设置成 null 的。
+   * 可选择：true | false
+   * 默认值：false
+   */
   protected boolean callSettersOnNulls;
+
+  /**
+   * 允许使用方法签名中的名称作为语句参数名称。 为了使用该特性，你的项目必须采用 Java 8 编译，并且加上 -parameters 选项。（新增于 3.4.1）
+   * 可选择：true | false
+   * 默认值：true
+   */
   protected boolean useActualParamName = true;
+
+  /**
+   * 当返回行的所有列都是空时，MyBatis默认返回 null。 当开启这个设置时，MyBatis会返回一个空实例。 请注意，它也适用于嵌套的结果集（如集合或关联）。（新增于 3.4.2）
+   * 可选择：true | false
+   * 默认值：false
+   */
   protected boolean returnInstanceForEmptyRow;
+
+  /**
+   * 从SQL中删除多余的空格字符。请注意，这也会影响SQL中的文字字符串。 (新增于 3.5.5)
+   * 可选择：true | false
+   * 默认值：false
+   */
   protected boolean shrinkWhitespacesInSql;
 
+  /**
+   * 指定 MyBatis 增加到日志名称的前缀。
+   * 默认值：未设置
+   */
   protected String logPrefix;
+
+  /**
+   * 指定 MyBatis 所用日志的具体实现，未指定时将自动查找。
+   * 可选值：SLF4J | LOG4J | LOG4J2 | JDK_LOGGING | COMMONS_LOGGING | STDOUT_LOGGING | NO_LOGGING
+   * 默认值：未设置
+   */
   protected Class<? extends Log> logImpl;
+
+  /**
+   * 指定 VFS 的实现
+   * 可选值：自定义 VFS 的实现的类全限定名，以逗号分隔。
+   * 默认值：未设置
+   */
   protected Class<? extends VFS> vfsImpl;
+
+  /**
+   * 指定一个包含提供程序方法的SQL提供程序类（自3.5.6开始）。 当省略了这些属性时，此类适用于sql provider注释（例如@SelectProvider）上的type（或value）属性。
+   * 可选值：一个类型别名或完全限定类名。
+   * 默认值：未设置
+   */
   protected Class<?> defaultSqlProviderType;
+
+  /**
+   * MyBatis 利用本地缓存机制（Local Cache）防止循环引用和加速重复的嵌套查询。 默认值为 SESSION，会缓存一个会话中执行的所有查询。 若设置值为 STATEMENT，本地缓存将仅用于执行语句，对相同 SqlSession 的不同查询将不会进行缓存。
+   * 可选值：SESSION | STATEMENT
+   * 默认值：SESSION
+   */
   protected LocalCacheScope localCacheScope = LocalCacheScope.SESSION;
+
+  /**
+   * 当没有为参数指定特定的 JDBC 类型时，空值的默认 JDBC 类型。 某些数据库驱动需要指定列的 JDBC 类型，多数情况直接用一般类型即可，比如 NULL、VARCHAR 或 OTHER。
+   * 可选值：JdbcType 常量，常用值：NULL、VARCHAR 或 OTHER。
+   * 默认值：OTHER
+   */
   protected JdbcType jdbcTypeForNull = JdbcType.OTHER;
+
+  /**
+   * 指定对象的哪些方法触发一次延迟加载。
+   * 可选值：用逗号分隔的方法列表。
+   * 默认值：equals,clone,hashCode,toString
+   */
   protected Set<String> lazyLoadTriggerMethods = new HashSet<>(Arrays.asList("equals", "clone", "hashCode", "toString"));
+
+  /**
+   * 设置超时时间，它决定数据库驱动等待数据库响应的秒数。
+   * 可选值：任意正整数
+   * 默认值：未设置 (null)
+   */
   protected Integer defaultStatementTimeout;
+
+  /**
+   * 为驱动的结果集获取数量（fetchSize）设置一个建议值。此参数只可以在查询设置中被覆盖。
+   * 可选值：任意正整数
+   * 默认值：未设置 (null)
+   */
   protected Integer defaultFetchSize;
+
+  /**
+   * 指定语句默认的滚动策略。（新增于 3.5.2）
+   * 可选值：FORWARD_ONLY | SCROLL_SENSITIVE | SCROLL_INSENSITIVE | DEFAULT（等同于未设置）
+   * 默认值：未设置 (null)
+   */
   protected ResultSetType defaultResultSetType;
+
+  /**
+   * 配置默认的执行器。SIMPLE 就是普通的执行器；REUSE 执行器会重用预处理语句（PreparedStatement）； BATCH 执行器不仅重用语句还会执行批量更新。
+   * 可选值：SIMPLE REUSE BATCH
+   * 默认值：SIMPLE
+   */
   protected ExecutorType defaultExecutorType = ExecutorType.SIMPLE;
+
+  /**
+   * 指定 MyBatis 应如何自动映射列到字段或属性。 NONE 表示关闭自动映射；PARTIAL 只会自动映射没有定义嵌套结果映射的字段。 FULL 会自动映射任何复杂的结果集（无论是否嵌套）。
+   * 可选值：NONE, PARTIAL, FULL
+   * 默认值：PARTIAL
+   */
   protected AutoMappingBehavior autoMappingBehavior = AutoMappingBehavior.PARTIAL;
+
+  /**
+   * 指定发现自动映射目标未知列（或未知属性类型）的行为。
+   * NONE: 不做任何反应
+   * WARNING: 输出警告日志（'org.apache.ibatis.session.AutoMappingUnknownColumnBehavior' 的日志等级必须设置为 WARN）
+   * FAILING: 映射失败 (抛出 SqlSessionException)
+   * 可选值：NONE, WARNING, FAILING
+   * 默认值：NONE
+   */
   protected AutoMappingUnknownColumnBehavior autoMappingUnknownColumnBehavior = AutoMappingUnknownColumnBehavior.NONE;
 
+  /**
+   *
+   */
   protected Properties variables = new Properties();
+
+  /**
+   *
+   */
   protected ReflectorFactory reflectorFactory = new DefaultReflectorFactory();
   protected ObjectFactory objectFactory = new DefaultObjectFactory();
   protected ObjectWrapperFactory objectWrapperFactory = new DefaultObjectWrapperFactory();
 
+  /**
+   * 延迟加载的全局开关。当开启时，所有关联对象都会延迟加载。 特定关联关系中可通过设置 fetchType 属性来覆盖该项的开关状态。
+   * 可选值：true | false
+   * 默认值：false
+   */
   protected boolean lazyLoadingEnabled = false;
+
+  /**
+   * 指定 Mybatis 创建可延迟加载对象所用到的代理工具。
+   * 可选值：CGLIB | JAVASSIST
+   * 默认值：JAVASSIST （MyBatis 3.3 以上）
+   */
   protected ProxyFactory proxyFactory = new JavassistProxyFactory(); // #224 Using internal Javassist instead of OGNL
 
   protected String databaseId;
@@ -143,6 +316,10 @@ public class Configuration {
    * Used to create Configuration for loading deserialized unread properties.
    *
    * @see <a href='https://github.com/mybatis/old-google-code-issues/issues/300'>Issue 300 (google code)</a>
+   * <p>
+   * 指定一个提供 Configuration 实例的类。 这个被返回的 Configuration 实例用来加载被反序列化对象的延迟加载属性值。 这个类必须包含一个签名为static Configuration getConfiguration() 的方法。（新增于 3.2.3）
+   * 可选值：一个类型别名或完全限定类名。
+   * 默认值：未设置
    */
   protected Class<?> configurationFactory;
 
@@ -153,8 +330,8 @@ public class Configuration {
   protected final LanguageDriverRegistry languageRegistry = new LanguageDriverRegistry();
 
   protected final Map<String, MappedStatement> mappedStatements = new StrictMap<MappedStatement>("Mapped Statements collection")
-      .conflictMessageProducer((savedValue, targetValue) ->
-          ". please check " + savedValue.getResource() + " and " + targetValue.getResource());
+    .conflictMessageProducer((savedValue, targetValue) ->
+      ". please check " + savedValue.getResource() + " and " + targetValue.getResource());
   protected final Map<String, Cache> caches = new StrictMap<>("Caches collection");
   protected final Map<String, ResultMap> resultMaps = new StrictMap<>("Result Maps collection");
   protected final Map<String, ParameterMap> parameterMaps = new StrictMap<>("Parameter Maps collection");
@@ -257,8 +434,7 @@ public class Configuration {
   /**
    * Sets an applying type when omit a type on sql provider annotation(e.g. {@link org.apache.ibatis.annotations.SelectProvider}).
    *
-   * @param defaultSqlProviderType
-   *          the default type for sql provider annotation
+   * @param defaultSqlProviderType the default type for sql provider annotation
    * @since 3.5.6
    */
   public void setDefaultSqlProviderType(Class<?> defaultSqlProviderType) {
@@ -374,8 +550,7 @@ public class Configuration {
   /**
    * Sets the auto mapping unknown column behavior.
    *
-   * @param autoMappingUnknownColumnBehavior
-   *          the new auto mapping unknown column behavior
+   * @param autoMappingUnknownColumnBehavior the new auto mapping unknown column behavior
    * @since 3.4.0
    */
   public void setAutoMappingUnknownColumnBehavior(AutoMappingUnknownColumnBehavior autoMappingUnknownColumnBehavior) {
@@ -470,8 +645,7 @@ public class Configuration {
   /**
    * Sets the default fetch size.
    *
-   * @param defaultFetchSize
-   *          the new default fetch size
+   * @param defaultFetchSize the new default fetch size
    * @since 3.3.0
    */
   public void setDefaultFetchSize(Integer defaultFetchSize) {
@@ -491,8 +665,7 @@ public class Configuration {
   /**
    * Sets the default result set type.
    *
-   * @param defaultResultSetType
-   *          the new default result set type
+   * @param defaultResultSetType the new default result set type
    * @since 3.5.2
    */
   public void setDefaultResultSetType(ResultSetType defaultResultSetType) {
@@ -538,6 +711,7 @@ public class Configuration {
   /**
    * Set a default {@link TypeHandler} class for {@link Enum}.
    * A default {@link TypeHandler} is {@link org.apache.ibatis.type.EnumTypeHandler}.
+   *
    * @param typeHandler a type handler class for {@link Enum}
    * @since 3.4.5
    */
@@ -613,8 +787,7 @@ public class Configuration {
   /**
    * Gets the language driver.
    *
-   * @param langClass
-   *          the lang class
+   * @param langClass the lang class
    * @return the language driver
    * @since 3.5.1
    */
@@ -648,7 +821,7 @@ public class Configuration {
   }
 
   public ResultSetHandler newResultSetHandler(Executor executor, MappedStatement mappedStatement, RowBounds rowBounds, ParameterHandler parameterHandler,
-      ResultHandler resultHandler, BoundSql boundSql) {
+                                              ResultHandler resultHandler, BoundSql boundSql) {
     ResultSetHandler resultSetHandler = new DefaultResultSetHandler(executor, mappedStatement, parameterHandler, resultHandler, boundSql, rowBounds);
     resultSetHandler = (ResultSetHandler) interceptorChain.pluginAll(resultSetHandler);
     return resultSetHandler;
@@ -924,8 +1097,7 @@ public class Configuration {
   /**
    * Extracts namespace from fully qualified statement id.
    *
-   * @param statementId
-   *          the statement id
+   * @param statementId the statement id
    * @return namespace or null when id does not contain period.
    */
   protected String extractNamespace(String statementId) {
@@ -997,6 +1169,7 @@ public class Configuration {
      * Assign a function for producing a conflict error message when contains value with the same key.
      * <p>
      * function arguments are 1st is saved value and 2nd is target value.
+     *
      * @param conflictMessageProducer A function for producing a conflict error message
      * @return a conflict error message
      * @since 3.5.0
@@ -1011,7 +1184,7 @@ public class Configuration {
     public V put(String key, V value) {
       if (containsKey(key)) {
         throw new IllegalArgumentException(name + " already contains value for " + key
-            + (conflictMessageProducer == null ? "" : conflictMessageProducer.apply(super.get(key), value)));
+          + (conflictMessageProducer == null ? "" : conflictMessageProducer.apply(super.get(key), value)));
       }
       if (key.contains(".")) {
         final String shortKey = getShortName(key);
@@ -1032,7 +1205,7 @@ public class Configuration {
       }
       if (value instanceof Ambiguity) {
         throw new IllegalArgumentException(((Ambiguity) value).getSubject() + " is ambiguous in " + name
-            + " (try using the full name including the namespace, or rename one of the entries)");
+          + " (try using the full name including the namespace, or rename one of the entries)");
       }
       return value;
     }
