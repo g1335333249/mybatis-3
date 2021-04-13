@@ -22,8 +22,14 @@ class ByteArrayUtils {
 
   private ByteArrayUtils() {
     // Prevent Instantiation
+    // 防止实例化
   }
 
+  /**
+   * 转换为原始类型数组
+   * @param objects
+   * @return
+   */
   static byte[] convertToPrimitiveArray(Byte[] objects) {
     final byte[] bytes = new byte[objects.length];
     for (int i = 0; i < objects.length; i++) {
@@ -32,6 +38,11 @@ class ByteArrayUtils {
     return bytes;
   }
 
+  /**
+   * 转换为对象类型数组
+   * @param bytes
+   * @return
+   */
   static Byte[] convertToObjectArray(byte[] bytes) {
     final Byte[] objects = new Byte[bytes.length];
     for (int i = 0; i < bytes.length; i++) {

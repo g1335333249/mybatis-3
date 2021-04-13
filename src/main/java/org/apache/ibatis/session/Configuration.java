@@ -325,7 +325,15 @@ public class Configuration {
 
   protected final MapperRegistry mapperRegistry = new MapperRegistry(this);
   protected final InterceptorChain interceptorChain = new InterceptorChain();
+
+  /**
+   * 类型处理注册器
+   */
   protected final TypeHandlerRegistry typeHandlerRegistry = new TypeHandlerRegistry(this);
+
+  /**
+   * 类型别名注册器
+   */
   protected final TypeAliasRegistry typeAliasRegistry = new TypeAliasRegistry();
   protected final LanguageDriverRegistry languageRegistry = new LanguageDriverRegistry();
 

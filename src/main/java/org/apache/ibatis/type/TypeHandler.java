@@ -25,23 +25,46 @@ import java.sql.SQLException;
  */
 public interface TypeHandler<T> {
 
+  /**
+   * 设置参数
+   * @param ps
+   * @param i
+   * @param parameter
+   * @param jdbcType
+   * @throws SQLException
+   */
   void setParameter(PreparedStatement ps, int i, T parameter, JdbcType jdbcType) throws SQLException;
 
   /**
    * Gets the result.
+   * 获取结果
    *
    * @param rs
    *          the rs
    * @param columnName
-   *          Colunm name, when configuration <code>useColumnLabel</code> is <code>false</code>
+   *          Column name, when configuration <code>useColumnLabel</code> is <code>false</code>
    * @return the result
    * @throws SQLException
    *           the SQL exception
    */
   T getResult(ResultSet rs, String columnName) throws SQLException;
 
+  /**
+   * 获取结果
+   * @param rs
+   * @param columnIndex
+   * @return
+   * @throws SQLException
+   */
   T getResult(ResultSet rs, int columnIndex) throws SQLException;
 
+  /**
+   * 获取结果
+   * @param cs
+   * @param columnIndex
+   * @return
+   * @throws SQLException
+   */
   T getResult(CallableStatement cs, int columnIndex) throws SQLException;
 
 }

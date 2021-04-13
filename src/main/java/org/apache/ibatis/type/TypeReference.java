@@ -27,6 +27,9 @@ import java.lang.reflect.Type;
  */
 public abstract class TypeReference<T> {
 
+  /**
+   * 原始类型
+   */
   private final Type rawType;
 
   protected TypeReference() {
@@ -37,6 +40,7 @@ public abstract class TypeReference<T> {
     Type genericSuperclass = clazz.getGenericSuperclass();
     if (genericSuperclass instanceof Class) {
       // try to climb up the hierarchy until meet something useful
+      // 尝试向上获取直到遇到有用的
       if (TypeReference.class != genericSuperclass) {
         return getSuperclassTypeParameter(clazz.getSuperclass());
       }
