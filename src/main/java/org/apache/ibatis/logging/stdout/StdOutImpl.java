@@ -18,6 +18,7 @@ package org.apache.ibatis.logging.stdout;
 import org.apache.ibatis.logging.Log;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public class StdOutImpl implements Log {

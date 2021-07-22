@@ -37,6 +37,7 @@ import org.apache.ibatis.type.TypeHandlerRegistry;
 import org.apache.ibatis.type.UnknownTypeHandler;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Iwao AVE!
  */
 public class ResultSetWrapper {

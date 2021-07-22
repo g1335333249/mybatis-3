@@ -21,6 +21,7 @@ import java.util.logging.Logger;
 import org.apache.ibatis.logging.Log;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public class Jdk14LoggingImpl implements Log {

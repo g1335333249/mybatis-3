@@ -21,6 +21,7 @@ import java.lang.reflect.Method;
 import org.apache.ibatis.reflection.Reflector;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public class MethodInvoker implements Invoker {

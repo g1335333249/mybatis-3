@@ -34,6 +34,7 @@ import org.junit.jupiter.api.Test;
 /*
  * Test for NPE when using extends.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author poitrac
  */
 class NpeExtendsTest {

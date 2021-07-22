@@ -22,6 +22,7 @@ import org.slf4j.Marker;
 import org.slf4j.spi.LocationAwareLogger;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  * @author Eduardo Macarron
  */

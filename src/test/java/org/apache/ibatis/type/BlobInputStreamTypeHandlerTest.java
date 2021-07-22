@@ -42,6 +42,7 @@ import org.mockito.Mock;
  * Tests for {@link BlobInputStreamTypeHandler}.
  *
  * @since 3.4.0
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  */
 class BlobInputStreamTypeHandlerTest extends BaseTypeHandlerTest {

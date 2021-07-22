@@ -29,6 +29,7 @@ import java.util.Properties;
  * 通过类加载器简化对资源的访问的类。
  * A class to simplify access to resources through the classloader.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public class Resources {

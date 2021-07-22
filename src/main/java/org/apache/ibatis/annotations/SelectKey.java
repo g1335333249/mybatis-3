@@ -38,6 +38,7 @@ import org.apache.ibatis.mapping.StatementType;
  * }
  * </pre>
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 @Documented
@@ -101,7 +102,8 @@ public @interface SelectKey {
 
   /**
    * The container annotation for {@link SelectKey}.
-   * @author Kazuki Shimizu
+   * 翻译：https://github.com/g1335333249/mybatis-3
+ * @author Kazuki Shimizu
    * @since 3.5.5
    */
   @Documented

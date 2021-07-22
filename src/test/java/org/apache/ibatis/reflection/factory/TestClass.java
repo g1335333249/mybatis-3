@@ -18,6 +18,7 @@ package org.apache.ibatis.reflection.factory;
 /**
  * TestClass
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Ryan Lamore
  */
 public class TestClass {

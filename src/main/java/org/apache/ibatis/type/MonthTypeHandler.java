@@ -24,6 +24,7 @@ import java.time.Month;
 /**
  *
  * @since 3.4.5
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Björn Raupach
  */
 public class MonthTypeHandler extends BaseTypeHandler<Month> {

@@ -40,9 +40,9 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 /**
- * The default implementation for {@link SqlSession}.
- * Note that this class is not Thread-Safe.
- *
+ * {@link SqlSession} 的默认实现。
+ * 请注意，此类不是线程安全的。
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public class DefaultSqlSession implements SqlSession {

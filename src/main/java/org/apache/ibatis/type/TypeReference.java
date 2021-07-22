@@ -23,6 +23,7 @@ import java.lang.reflect.Type;
  *
  * @param <T> the referenced type
  * @since 3.1.0
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Simone Tripodi
  */
 public abstract class TypeReference<T> {

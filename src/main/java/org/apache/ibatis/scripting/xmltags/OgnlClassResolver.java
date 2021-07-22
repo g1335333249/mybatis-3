@@ -24,6 +24,7 @@ import org.apache.ibatis.io.Resources;
  * {@code DefaultClassResolver}. But uses the {@code Resources}
  * utility class to find the target class instead of {@code Class#forName(String)}.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Daniel Guggi
  *
  * @see <a href='https://github.com/mybatis/mybatis-3/issues/161'>Issue 161</a>

@@ -35,6 +35,7 @@ import org.apache.ibatis.logging.LogFactory;
  * It can return null, if no database product name or
  * a properties was specified and no translation was found.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Eduardo Macarron
  */
 public class VendorDatabaseIdProvider implements DatabaseIdProvider {

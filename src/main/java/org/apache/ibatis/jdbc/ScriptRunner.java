@@ -33,6 +33,7 @@ import java.util.regex.Pattern;
  * but if there is some feature/enhancement you need for your own usage,<br>
  * please make and modify your own copy instead of sending us an enhancement request.<br>
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public class ScriptRunner {

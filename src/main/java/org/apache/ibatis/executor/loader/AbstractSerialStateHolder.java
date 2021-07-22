@@ -35,6 +35,7 @@ import org.apache.ibatis.io.SerialFilterChecker;
 import org.apache.ibatis.reflection.factory.ObjectFactory;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Eduardo Macarron
  * @author Franta Mejta
  */

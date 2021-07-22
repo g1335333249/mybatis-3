@@ -23,6 +23,7 @@ import java.time.LocalTime;
 
 /**
  * @since 3.4.5
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Tomas Rohovsky
  */
 public class LocalTimeTypeHandler extends BaseTypeHandler<LocalTime> {

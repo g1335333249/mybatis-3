@@ -27,6 +27,7 @@ import java.time.chrono.JapaneseDate;
  * Type Handler for {@link JapaneseDate}.
  *
  * @since 3.4.5
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  */
 public class JapaneseDateTypeHandler extends BaseTypeHandler<JapaneseDate> {

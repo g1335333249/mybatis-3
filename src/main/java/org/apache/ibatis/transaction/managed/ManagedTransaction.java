@@ -31,6 +31,7 @@ import org.apache.ibatis.transaction.Transaction;
  * Ignores all commit or rollback requests.
  * By default, it closes the connection but can be configured not to do it.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  *
  * @see ManagedTransactionFactory

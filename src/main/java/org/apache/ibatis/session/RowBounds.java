@@ -17,6 +17,7 @@ package org.apache.ibatis.session;
 
 /**
  * 行边界
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public class RowBounds {

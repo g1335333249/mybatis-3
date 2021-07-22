@@ -39,6 +39,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author liuzh
  */
 class Jdbc3KeyGeneratorTest {

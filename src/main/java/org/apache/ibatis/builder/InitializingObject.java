@@ -19,6 +19,7 @@ package org.apache.ibatis.builder;
  * Interface that indicate to provide an initialization method.
  *
  * @since 3.4.2
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  */
 public interface InitializingObject {

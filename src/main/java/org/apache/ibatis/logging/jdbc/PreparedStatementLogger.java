@@ -28,6 +28,7 @@ import org.apache.ibatis.reflection.ExceptionUtil;
 /**
  * PreparedStatement proxy to add logging.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  * @author Eduardo Macarron
  *

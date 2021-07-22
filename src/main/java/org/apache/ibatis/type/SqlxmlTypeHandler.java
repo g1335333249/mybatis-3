@@ -25,6 +25,7 @@ import java.sql.SQLXML;
  * Convert <code>String</code> to/from <code>SQLXML</code>.
  *
  * @since 3.5.0
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Iwao AVE!
  */
 public class SqlxmlTypeHandler extends BaseTypeHandler<String> {

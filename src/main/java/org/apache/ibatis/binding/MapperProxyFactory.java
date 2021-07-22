@@ -24,6 +24,7 @@ import org.apache.ibatis.binding.MapperProxy.MapperMethodInvoker;
 import org.apache.ibatis.session.SqlSession;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Lasse Voss
  */
 public class MapperProxyFactory<T> {

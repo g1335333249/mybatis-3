@@ -28,6 +28,7 @@ import org.apache.ibatis.logging.LogFactory;
 /**
  * A {@link VFS} implementation that works with the VFS API provided by JBoss 6.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Ben Gunter
  */
 public class JBoss6VFS extends VFS {

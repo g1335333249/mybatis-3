@@ -21,6 +21,7 @@ import org.apache.ibatis.type.EnumOrdinalTypeHandler;
 
 /**
  * @since #444
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  */
 public interface PersonMapper {

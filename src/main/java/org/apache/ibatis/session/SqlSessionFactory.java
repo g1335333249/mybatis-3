@@ -18,8 +18,9 @@ package org.apache.ibatis.session;
 import java.sql.Connection;
 
 /**
- * Creates an {@link SqlSession} out of a connection or a DataSource
+ * 从连接或数据源创建 {@link SqlSession}
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public interface SqlSessionFactory {

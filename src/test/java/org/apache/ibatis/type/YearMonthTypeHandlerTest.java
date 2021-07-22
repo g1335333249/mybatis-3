@@ -23,6 +23,7 @@ import java.time.YearMonth;
 import org.junit.jupiter.api.Test;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Björn Raupach
  */
 class YearMonthTypeHandlerTest extends BaseTypeHandlerTest {

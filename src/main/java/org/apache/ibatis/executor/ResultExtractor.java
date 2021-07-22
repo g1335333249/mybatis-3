@@ -23,6 +23,7 @@ import org.apache.ibatis.reflection.factory.ObjectFactory;
 import org.apache.ibatis.session.Configuration;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Andrew Gustafson
  */
 public class ResultExtractor {

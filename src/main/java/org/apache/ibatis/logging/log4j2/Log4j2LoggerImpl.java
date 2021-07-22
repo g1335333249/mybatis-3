@@ -22,6 +22,7 @@ import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Eduardo Macarron
  */
 public class Log4j2LoggerImpl implements Log {

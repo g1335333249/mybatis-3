@@ -53,6 +53,7 @@ import org.apache.ibatis.logging.LogFactory;
  * Collection&lt;ActionBean&gt; beans = resolver.getClasses();
  * </pre>
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Tim Fennell
  * @param <T>
  *          the generic type

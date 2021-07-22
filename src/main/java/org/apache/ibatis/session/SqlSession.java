@@ -29,6 +29,7 @@ import org.apache.ibatis.executor.BatchResult;
  * Through this interface you can execute commands, get mappers and manage transactions.
  * 通过此接口，您可以执行命令，获取映射器和管理事务。
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public interface SqlSession extends Closeable {

@@ -27,6 +27,7 @@ import org.apache.ibatis.reflection.Reflector;
  * The {@link MemberAccess} class that based on <a href=
  * 'https://github.com/jkuhnert/ognl/blob/OGNL_3_2_1/src/java/ognl/DefaultMemberAccess.java'>DefaultMemberAccess</a>.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  * @since 3.5.0
  *

@@ -24,6 +24,7 @@ import java.util.List;
  * java.sql.BatchUpdateException that is the root cause, as well as
  * the results from any prior nested batch that executed successfully.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Jeff Butler
  */
 public class BatchExecutorException extends ExecutorException {

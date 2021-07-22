@@ -31,6 +31,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Frank D. Martinez [mnesarco]
  */
 public class XMLIncludeTransformer {

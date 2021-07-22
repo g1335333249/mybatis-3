@@ -18,6 +18,7 @@ package org.apache.ibatis.mapping;
 import java.sql.ResultSet;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public enum ResultSetType {

@@ -20,6 +20,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Eduardo Macarron
  */
 public class Log4jImpl implements Log {

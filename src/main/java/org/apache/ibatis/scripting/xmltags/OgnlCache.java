@@ -26,6 +26,7 @@ import org.apache.ibatis.builder.BuilderException;
 /**
  * Caches OGNL parsed expressions.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Eduardo Macarron
  *
  * @see <a href='https://github.com/mybatis/old-google-code-issues/issues/342'>Issue 342</a>

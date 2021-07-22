@@ -23,6 +23,7 @@ import java.io.Closeable;
  * If you use collections in resultMaps then cursor SQL queries must be ordered (resultOrdered="true")
  * using the id columns of the resultMap.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Guillaume Darmont / guillaume@dropinocean.com
  */
 public interface Cursor<T> extends Closeable, Iterable<T> {

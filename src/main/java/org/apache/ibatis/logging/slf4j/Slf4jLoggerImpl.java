@@ -19,6 +19,7 @@ import org.apache.ibatis.logging.Log;
 import org.slf4j.Logger;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Eduardo Macarron
  */
 class Slf4jLoggerImpl implements Log {

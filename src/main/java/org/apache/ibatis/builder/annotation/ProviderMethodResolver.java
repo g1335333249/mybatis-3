@@ -29,6 +29,7 @@ import org.apache.ibatis.builder.BuilderException;
  * it need to define the default constructor for creating a new instance.
  *
  * @since 3.5.1
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  */
 public interface ProviderMethodResolver {

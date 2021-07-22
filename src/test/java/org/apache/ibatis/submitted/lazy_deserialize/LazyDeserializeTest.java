@@ -36,6 +36,7 @@ import org.junit.jupiter.api.Test;
 /**
  *
  * @since 2011-04-06T10:58:55+0200
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Franta Mejta
  */
 class LazyDeserializeTest {

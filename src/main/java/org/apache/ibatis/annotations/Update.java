@@ -35,6 +35,7 @@ import java.lang.annotation.Target;
  * }
  * </pre>
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 @Documented
@@ -57,7 +58,8 @@ public @interface Update {
 
   /**
    * The container annotation for {@link Update}.
-   * @author Kazuki Shimizu
+   * 翻译：https://github.com/g1335333249/mybatis-3
+ * @author Kazuki Shimizu
    * @since 3.5.5
    */
   @Documented

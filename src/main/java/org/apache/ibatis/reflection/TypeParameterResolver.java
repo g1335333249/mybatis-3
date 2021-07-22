@@ -26,6 +26,7 @@ import java.lang.reflect.WildcardType;
 import java.util.Arrays;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Iwao AVE!
  */
 public class TypeParameterResolver {

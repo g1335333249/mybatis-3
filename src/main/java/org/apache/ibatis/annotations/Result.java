@@ -30,6 +30,7 @@ import org.apache.ibatis.type.UnknownTypeHandler;
  * The annotation that specify a mapping definition for the property.
  *
  * @see Results
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 @Documented

@@ -19,6 +19,7 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * @since 2011-04-06T11:00:30+0200
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Franta Mejta
  */
 public interface Mapper {

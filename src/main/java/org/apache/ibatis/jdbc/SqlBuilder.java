@@ -18,6 +18,7 @@ package org.apache.ibatis.jdbc;
 /**
  * @deprecated Use the {@link SQL} Class
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Jeff Butler
  */
 public class SqlBuilder {

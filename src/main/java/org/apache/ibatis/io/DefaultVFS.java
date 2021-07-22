@@ -38,6 +38,7 @@ import org.apache.ibatis.logging.LogFactory;
 /**
  * A default implementation of {@link VFS} that works for most application servers.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Ben Gunter
  */
 public class DefaultVFS extends VFS {

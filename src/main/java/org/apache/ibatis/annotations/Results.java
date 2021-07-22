@@ -40,6 +40,7 @@ import java.lang.annotation.Target;
  * }
  * </pre>
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 @Documented

@@ -37,6 +37,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Jeff Butler
  */
 @Tag("TestcontainersTests")

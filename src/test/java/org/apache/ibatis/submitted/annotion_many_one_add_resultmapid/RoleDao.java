@@ -22,6 +22,7 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author lvyang
  */
 public interface RoleDao {

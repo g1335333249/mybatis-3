@@ -16,6 +16,7 @@
 package org.apache.ibatis.cache;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  * @deprecated Since 3.5.3, This class never used and will be removed future version.
  */

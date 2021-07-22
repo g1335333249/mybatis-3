@@ -22,6 +22,7 @@ import java.sql.SQLException;
 import java.util.Date;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public class DateOnlyTypeHandler extends BaseTypeHandler<Date> {

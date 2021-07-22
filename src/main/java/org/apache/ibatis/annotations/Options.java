@@ -39,6 +39,7 @@ import org.apache.ibatis.mapping.StatementType;
  * }
  * </pre>
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 @Documented
@@ -146,7 +147,8 @@ public @interface Options {
 
   /**
    * The container annotation for {@link Options}.
-   * @author Kazuki Shimizu
+   * 翻译：https://github.com/g1335333249/mybatis-3
+ * @author Kazuki Shimizu
    * @since 3.5.5
    */
   @Documented

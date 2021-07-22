@@ -24,6 +24,7 @@ import java.lang.annotation.Target;
  * The annotation that inject a property value.
  *
  * @since 3.4.2
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  * @see CacheNamespace
  */

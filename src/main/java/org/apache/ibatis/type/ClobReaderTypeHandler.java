@@ -25,6 +25,7 @@ import java.sql.SQLException;
 /**
  * The {@link TypeHandler} for {@link Clob}/{@link Reader} using method supported at JDBC 4.0.
  * @since 3.4.0
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  */
 public class ClobReaderTypeHandler extends BaseTypeHandler<Reader> {

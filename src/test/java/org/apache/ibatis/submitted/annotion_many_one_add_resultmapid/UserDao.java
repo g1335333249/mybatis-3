@@ -20,6 +20,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.*;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author lvyang
  */
 public interface UserDao {

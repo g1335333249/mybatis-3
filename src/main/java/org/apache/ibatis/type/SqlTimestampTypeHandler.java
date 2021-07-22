@@ -22,6 +22,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public class SqlTimestampTypeHandler extends BaseTypeHandler<Timestamp> {

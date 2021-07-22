@@ -23,6 +23,7 @@ import java.sql.Time;
 import java.util.Date;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public class TimeOnlyTypeHandler extends BaseTypeHandler<Date> {

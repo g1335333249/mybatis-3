@@ -20,6 +20,7 @@ import java.lang.reflect.Method;
 /**
  * The context object for sql provider method.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  * @since 3.4.5
  */

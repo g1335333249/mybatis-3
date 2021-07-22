@@ -24,6 +24,7 @@ import java.lang.annotation.Target;
  * The annotation that indicate the method signature.
  *
  * @see Intercepts
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 @Documented

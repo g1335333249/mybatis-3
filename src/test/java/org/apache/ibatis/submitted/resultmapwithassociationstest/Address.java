@@ -16,6 +16,7 @@
 package org.apache.ibatis.submitted.resultmapwithassociationstest;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Herman Bovens
  *
  */

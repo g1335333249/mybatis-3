@@ -37,6 +37,7 @@ import org.junit.jupiter.api.Test;
  * Tests for specify the behavior when detects an unknown column (or unknown property type) of automatic mapping target.
  *
  * @since 3.4.0
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  */
 class AutoMappingUnknownColumnBehaviorTest {

@@ -28,6 +28,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Unit tests for {@link ResolverUtil}.
  *
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Pi Chen
  * @since 3.5.2
  */

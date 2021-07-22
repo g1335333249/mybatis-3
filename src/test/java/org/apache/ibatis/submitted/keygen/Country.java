@@ -16,6 +16,7 @@
 package org.apache.ibatis.submitted.keygen;
 
 /**
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author liuzh
  */
 public class Country {

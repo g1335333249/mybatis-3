@@ -28,7 +28,8 @@ public interface LanguageDriver {
   /**
    * Creates a {@link ParameterHandler} that passes the actual parameters to the the JDBC statement.
    *
-   * @author Frank D. Martinez [mnesarco]
+   * 翻译：https://github.com/g1335333249/mybatis-3
+ * @author Frank D. Martinez [mnesarco]
    * @param mappedStatement The mapped statement that is being executed
    * @param parameterObject The input parameter object (can be null)
    * @param boundSql The resulting SQL once the dynamic language has been executed.

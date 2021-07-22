@@ -17,6 +17,7 @@ package org.apache.ibatis.submitted.enumtypehandler_on_annotation;
 
 /**
  * @since #444
+ * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Kazuki Shimizu
  */
 public class Person {
