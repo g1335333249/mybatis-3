@@ -72,7 +72,7 @@ public class DefaultSqlSession implements SqlSession {
 
   @Override
   public <T> T selectOne(String statement, Object parameter) {
-    // Popular vote was to return null on 0 results and throw exception on too many.
+    // 应该是在0条结果上返回 null 并对多条结果抛出异常。
     List<T> list = this.selectList(statement, parameter);
     if (list.size() == 1) {
       return list.get(0);
