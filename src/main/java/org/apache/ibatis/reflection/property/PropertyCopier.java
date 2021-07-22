@@ -25,7 +25,7 @@ import org.apache.ibatis.reflection.Reflector;
 public final class PropertyCopier {
 
   private PropertyCopier() {
-    // Prevent Instantiation of Static Class
+    // 防止静态类的实例化
   }
 
   public static void copyBeanProperties(Class<?> type, Object sourceBean, Object destinationBean) {
@@ -45,7 +45,7 @@ public final class PropertyCopier {
             }
           }
         } catch (Exception e) {
-          // Nothing useful to do, will only fail on final fields, which will be ignored.
+          // 没有什么用处，只会在最终字段上失败，这将被忽略。
         }
       }
       parent = parent.getSuperclass();
