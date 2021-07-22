@@ -12,9 +12,10 @@ MyBatis SQL Mapper Framework for Java
 ![mybatis](http://mybatis.github.io/images/mybatis-logo.png)
 
 Mybatis 源码中文注释版（持续完善中）
-MyBatis SQL 映射器框架使得在面向对象的应用程序中使用关系数据库变得更加容易。
-MyBatis 使用 XML 描述符或注解将对象与存储过程或 SQL 语句耦合。
-简单性是 MyBatis 数据映射器相对于对象关系映射工具的最大优势。
+----------
+- MyBatis SQL 映射器框架使得在面向对象的应用程序中使用关系数据库变得更加容易。
+- MyBatis 使用 XML 描述符或注解将对象与存储过程或 SQL 语句耦合。
+- 简单性是 MyBatis 数据映射器相对于对象关系映射工具的最大优势。
 
 Essentials
 ----------
