@@ -31,6 +31,9 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+/**
+ * 测试 自动构造函数
+ */
 class AutoConstructorTest {
   private static SqlSessionFactory sqlSessionFactory;
 
