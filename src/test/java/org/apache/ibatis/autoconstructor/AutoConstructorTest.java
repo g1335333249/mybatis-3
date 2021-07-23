@@ -94,4 +94,11 @@ class AutoConstructorTest {
     assertNotNull(subjects);
     Assertions.assertThat(subjects.size()).isEqualTo(3);
   }
+
+  @Test
+  void selectMapTest(){
+    SqlSession sqlSession = sqlSessionFactory.openSession();
+    Object selectOne = sqlSession.selectOne("getSubject",1);
+    System.out.println(selectOne);
+  }
 }

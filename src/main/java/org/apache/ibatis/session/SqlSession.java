@@ -33,17 +33,17 @@ import org.apache.ibatis.executor.BatchResult;
 public interface SqlSession extends Closeable {
 
   /**
-   * 查询一条结果
-   * @param <T> the returned object type 返回的对象类型
-   * @param statement 查询的SQL语句
+   * 查询一条结果（One）
+   * @param <T> 返回的对象类型
+   * @param statement 查询的Mapper方法名称
    *          the statement
    * @return Mapped object
    */
   <T> T selectOne(String statement);
 
   /**
-   * 查询一条结果
-   * @param <T> the returned object type
+   * 查询一条结果（One）
+   * @param <T> 返回的对象类型
    * @param statement 与要使用的语句匹配的唯一标识符。
    * @param parameter 要传递给语句的参数对象。
    * @return Mapped object
@@ -51,17 +51,17 @@ public interface SqlSession extends Closeable {
   <T> T selectOne(String statement, Object parameter);
 
   /**
-   * Retrieve a list of mapped objects from the statement key.
+   * 查询多条结果（List）
    * 查询列表结果
-   * @param <E> the returned list element type
+   * @param <E> 返回的List对象类型
    * @param statement 与要使用的语句匹配的唯一标识符。
    * @return List of mapped object
    */
   <E> List<E> selectList(String statement);
 
   /**
-   * Retrieve a list of mapped objects from the statement key and parameter.
-   * @param <E> the returned list element type
+   * 带参查询多条结果（List）
+   * @param <E> 返回的List对象类型
    * @param statement 与要使用的语句匹配的唯一标识符。
    * @param parameter 要传递给语句的参数对象。
    * @return List of mapped object
@@ -69,23 +69,22 @@ public interface SqlSession extends Closeable {
   <E> List<E> selectList(String statement, Object parameter);
 
   /**
-   * Retrieve a list of mapped objects from the statement key and parameter,
-   * within the specified row bounds.
-   * @param <E> the returned list element type
+   * 带参查询多条结果（List）
+   * 在指定的行范围内。
+   * @param <E> 返回的List对象类型
    * @param statement 与要使用的语句匹配的唯一标识符。
    * @param parameter 要传递给语句的参数对象。
-   * @param rowBounds  Bounds to limit object retrieval
+   * @param rowBounds  限制对象检索的界限
    * @return List of mapped object
    */
   <E> List<E> selectList(String statement, Object parameter, RowBounds rowBounds);
 
   /**
-   * The selectMap is a special case in that it is designed to convert a list
-   * of results into a Map based on one of the properties in the resulting
-   * objects.
-   * Eg. Return a of Map[Integer,Author] for selectMap("selectAuthors","id")
-   * @param <K> the returned Map keys type
-   * @param <V> the returned Map values type
+   * selectMap 是一种特殊情况，它旨在转换列表
+   * 根据结果中的一个属性将结果转换为 Map对象。
+   * 例如。 为 selectMap("selectAuthors","id") 返回 Map[Integer,Author]
+   * @param <K> 返回值Map的keys类型
+   * @param <V> 返回值Map的values类型
    * @param statement 与要使用的语句匹配的唯一标识符。
    * @param mapKey The property to use as key for each value in the list.
    * @return Map containing key pair data.
@@ -114,7 +113,7 @@ public interface SqlSession extends Closeable {
    * @param statement 与要使用的语句匹配的唯一标识符。
    * @param parameter 要传递给语句的参数对象。
    * @param mapKey The property to use as key for each value in the list.
-   * @param rowBounds  Bounds to limit object retrieval
+   * @param rowBounds  限制对象检索的界限
    * @return Map containing key pair data.
    */
   <K, V> Map<K, V> selectMap(String statement, Object parameter, String mapKey, RowBounds rowBounds);
@@ -141,7 +140,7 @@ public interface SqlSession extends Closeable {
    * @param <T> the returned cursor element type.
    * @param statement 与要使用的语句匹配的唯一标识符。
    * @param parameter 要传递给语句的参数对象。
-   * @param rowBounds  Bounds to limit object retrieval
+   * @param rowBounds  限制对象检索的界限
    * @return Cursor of mapped objects
    */
   <T> Cursor<T> selectCursor(String statement, Object parameter, RowBounds rowBounds);

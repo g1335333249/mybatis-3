@@ -347,17 +347,25 @@ public class Configuration {
   protected final Map<String, KeyGenerator> keyGenerators = new StrictMap<>("Key Generators collection");
 
   protected final Set<String> loadedResources = new HashSet<>();
+  /**
+   * SQL片段
+   */
   protected final Map<String, XNode> sqlFragments = new StrictMap<>("XML fragments parsed from previous mappers");
 
   protected final Collection<XMLStatementBuilder> incompleteStatements = new LinkedList<>();
   protected final Collection<CacheRefResolver> incompleteCacheRefs = new LinkedList<>();
+  /**
+   * 不完整结果Map
+   */
   protected final Collection<ResultMapResolver> incompleteResultMaps = new LinkedList<>();
+  /**
+   * 不完整方法
+   */
   protected final Collection<MethodResolver> incompleteMethods = new LinkedList<>();
 
   /*
-   * A map holds cache-ref relationship. The key is the namespace that
-   * references a cache bound to another namespace and the value is the
-   * namespace which the actual cache is bound to.
+   * 映射保存缓存引用关系。
+   * key是引用绑定到另一个命名空间的缓存的命名空间，value是实际缓存绑定到的命名空间。
    */
   protected final Map<String, String> cacheRefMap = new HashMap<>();
 
@@ -642,9 +650,9 @@ public class Configuration {
   }
 
   /**
-   * Gets the default fetch size.
+   * 获取默认提取大小。
    *
-   * @return the default fetch size
+   * @return 默认提取大小
    * @since 3.3.0
    */
   public Integer getDefaultFetchSize() {
@@ -996,6 +1004,12 @@ public class Configuration {
     return this.getMappedStatement(id, true);
   }
 
+  /**
+   *
+   * @param id
+   * @param validateIncompleteStatements 验证不完整语句
+   * @return
+   */
   public MappedStatement getMappedStatement(String id, boolean validateIncompleteStatements) {
     if (validateIncompleteStatements) {
       buildAllStatements();
@@ -1047,9 +1061,7 @@ public class Configuration {
   }
 
   /*
-   * Parses all the unprocessed statement nodes in the cache. It is recommended
-   * to call this method once all the mappers are added as it provides fail-fast
-   * statement validation.
+   * 解析缓存中所有未处理的语句节点。 建议在添加所有映射器后调用此方法，因为它提供快速失败的语句验证。
    */
   protected void buildAllStatements() {
     parsePendingResultMaps();
@@ -1175,11 +1187,11 @@ public class Configuration {
     }
 
     /**
-     * Assign a function for producing a conflict error message when contains value with the same key.
+     * 当包含具有相同键的值时，分配用于产生冲突错误消息的函数。
      * <p>
-     * function arguments are 1st is saved value and 2nd is target value.
+     * 函数参数是第一个是保存值，第二个是目标值。
      *
-     * @param conflictMessageProducer A function for producing a conflict error message
+     * @param conflictMessageProducer 产生冲突错误信息的函数
      * @return a conflict error message
      * @since 3.5.0
      */
@@ -1192,7 +1204,7 @@ public class Configuration {
     @SuppressWarnings("unchecked")
     public V put(String key, V value) {
       if (containsKey(key)) {
-        throw new IllegalArgumentException(name + " already contains value for " + key
+        throw new IllegalArgumentException(name + " 已经包含值 " + key
           + (conflictMessageProducer == null ? "" : conflictMessageProducer.apply(super.get(key), value)));
       }
       if (key.contains(".")) {
@@ -1210,11 +1222,11 @@ public class Configuration {
     public V get(Object key) {
       V value = super.get(key);
       if (value == null) {
-        throw new IllegalArgumentException(name + " does not contain value for " + key);
+        throw new IllegalArgumentException(name + " 不包含值 for " + key);
       }
       if (value instanceof Ambiguity) {
-        throw new IllegalArgumentException(((Ambiguity) value).getSubject() + " is ambiguous in " + name
-          + " (try using the full name including the namespace, or rename one of the entries)");
+        throw new IllegalArgumentException(((Ambiguity) value).getSubject() + " 是模糊的在 " + name
+          + "中 (尝试使用包含命名空间的全类名，或重命名其中一个条目)");
       }
       return value;
     }

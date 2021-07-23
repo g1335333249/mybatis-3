@@ -229,7 +229,7 @@ public class XPathParser {
   }
 
   private Document createDocument(InputSource inputSource) {
-    // important: this must only be called AFTER common constructor
+    // 重要：这只能在公共构造函数之后调用
     try {
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);

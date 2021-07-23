@@ -31,9 +31,9 @@ import org.apache.ibatis.session.TransactionIsolationLevel;
 public interface TransactionFactory {
 
   /**
-   * Sets transaction factory custom properties.
+   * 设置事务工厂自定义属性。
    * @param props
-   *          the new properties
+   *          新的属性
    */
   default void setProperties(Properties props) {
     // NOP
