@@ -18,7 +18,7 @@ package org.apache.ibatis.cache;
 /**
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
- * @deprecated Since 3.5.3, This class never used and will be removed future version.
+ * @deprecated 从 3.5.3 开始，这个类从未使用过，将来的版本将被删除。
  */
 @Deprecated
 public final class NullCacheKey extends CacheKey {
@@ -31,11 +31,11 @@ public final class NullCacheKey extends CacheKey {
 
   @Override
   public void update(Object object) {
-    throw new CacheException("Not allowed to update a NullCacheKey instance.");
+    throw new CacheException("不允许更新 NullCacheKey 实例。");
   }
 
   @Override
   public void updateAll(Object[] objects) {
-    throw new CacheException("Not allowed to update a NullCacheKey instance.");
+    throw new CacheException("不允许更新 NullCacheKey 实例。");
   }
 }

@@ -34,12 +34,12 @@ public class CacheKey implements Cloneable, Serializable {
 
     @Override
     public void update(Object object) {
-      throw new CacheException("Not allowed to update a null cache key instance.");
+      throw new CacheException("不允许更新空缓存键实例。");
     }
 
     @Override
     public void updateAll(Object[] objects) {
-      throw new CacheException("Not allowed to update a null cache key instance.");
+      throw new CacheException("不允许更新空缓存键实例。");
     }
   };
 
@@ -50,8 +50,7 @@ public class CacheKey implements Cloneable, Serializable {
   private int hashcode;
   private long checksum;
   private int count;
-  // 8/21/2017 - Sonarlint flags this as needing to be marked transient. While true if content is not serializable, this
-  // is not always true and thus should not be marked transient.
+  // 2017-8-21 Sonarlint 将此标记为需要标记为transient。如果内容不可序列化，则为 true，但这并不总是正确的，因此不应标记为transient。
   private List<Object> updateList;
 
   public CacheKey() {

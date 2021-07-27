@@ -23,13 +23,13 @@ import org.apache.ibatis.cache.Cache;
 import org.apache.ibatis.cache.CacheException;
 
 /**
- * <p>Simple blocking decorator
+ * <p>简单的阻塞装饰器
  *
- * <p>Simple and inefficient version of EhCache's BlockingCache decorator.
- * It sets a lock over a cache key when the element is not found in cache.
- * This way, other threads will wait until this element is filled instead of hitting the database.
+ * <p>EhCache 的 BlockingCache 装饰器的简单而低效的版本。
+ * 当在缓存中找不到元素时，它会锁定缓存键。
+ * 这样，其他线程将等获取到该元素的缓存键值而不是访问数据库。
  *
- * <p>By its nature, this implementation can cause deadlock when used incorrectly.
+ * <p>就其性质而言，如果使用不当，此实现可能会导致死锁。
  *
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Eduardo Macarron
@@ -77,7 +77,7 @@ public class BlockingCache implements Cache {
 
   @Override
   public Object removeObject(Object key) {
-    // despite of its name, this method is called only to release locks
+    // 尽管它的名字，这个方法被调用只是为了释放锁
     releaseLock(key);
     return null;
   }
@@ -105,7 +105,7 @@ public class BlockingCache implements Cache {
           latch.await();
         }
       } catch (InterruptedException e) {
-        throw new CacheException("Got interrupted while trying to acquire lock for key " + key, e);
+        throw new CacheException("尝试获取锁时被中断 " + key, e);
       }
     }
   }
