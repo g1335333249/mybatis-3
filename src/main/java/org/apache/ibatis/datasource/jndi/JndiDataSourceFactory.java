@@ -27,6 +27,7 @@ import org.apache.ibatis.datasource.DataSourceException;
 import org.apache.ibatis.datasource.DataSourceFactory;
 
 /**
+ * Jndi数据源工厂
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */

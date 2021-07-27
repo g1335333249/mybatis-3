@@ -20,13 +20,22 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 /**
+ * 数据源工厂
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */
 public interface DataSourceFactory {
 
+  /**
+   * 设置属性
+   * @param props
+   */
   void setProperties(Properties props);
 
+  /**
+   * 获取数据源
+   * @return
+   */
   DataSource getDataSource();
 
 }

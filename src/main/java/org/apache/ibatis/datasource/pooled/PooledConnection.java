@@ -43,7 +43,7 @@ class PooledConnection implements InvocationHandler {
   private boolean valid;
 
   /**
-   * Constructor for SimplePooledConnection that uses the Connection and PooledDataSource passed in.
+   * 使用传入的 Connection 和 PooledDataSource 的 SimplePooledConnection 的构造函数。
    *
    * @param connection
    *          - the connection that is to be presented as a pooled connection
@@ -61,16 +61,16 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
-   * Invalidates the connection.
+   * 使连接无效。
    */
   public void invalidate() {
     valid = false;
   }
 
   /**
-   * Method to see if the connection is usable.
+   * 查看连接是否可用的方法。
    *
-   * @return True if the connection is usable
+   * @return 如果连接可用则为真
    */
   public boolean isValid() {
     return valid && realConnection != null && dataSource.pingConnection(this);
@@ -86,7 +86,7 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
-   * Getter for the proxy for the connection.
+   * 获取代理连接
    *
    * @return The proxy
    */
@@ -95,7 +95,7 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
-   * Gets the hashcode of the real connection (or 0 if it is null).
+   * 获取真实连接的hashcode（如果为null则为 0）。
    *
    * @return The hashcode of the real connection (or 0 if it is null)
    */
@@ -104,16 +104,16 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
-   * Getter for the connection type (based on url + user + password).
+   * 获取连接类型 (based on url + user + password).
    *
-   * @return The connection type
+   * @return 连接类型
    */
   public int getConnectionTypeCode() {
     return connectionTypeCode;
   }
 
   /**
-   * Setter for the connection type.
+   * 设置连接类型
    *
    * @param connectionTypeCode
    *          - the connection type
@@ -123,45 +123,45 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
-   * Getter for the time that the connection was created.
+   * 获取连接的创建时间
    *
-   * @return The creation timestamp
+   * @return 时间戳
    */
   public long getCreatedTimestamp() {
     return createdTimestamp;
   }
 
   /**
-   * Setter for the time that the connection was created.
+   * 设置连接的创建时间
    *
    * @param createdTimestamp
-   *          - the timestamp
+   *          - 时间戳
    */
   public void setCreatedTimestamp(long createdTimestamp) {
     this.createdTimestamp = createdTimestamp;
   }
 
   /**
-   * Getter for the time that the connection was last used.
+   * 获取最后使用的时间
    *
-   * @return - the timestamp
+   * @return - 时间戳
    */
   public long getLastUsedTimestamp() {
     return lastUsedTimestamp;
   }
 
   /**
-   * Setter for the time that the connection was last used.
+   * 设置最后使用的时间
    *
    * @param lastUsedTimestamp
-   *          - the timestamp
+   *          - 时间戳
    */
   public void setLastUsedTimestamp(long lastUsedTimestamp) {
     this.lastUsedTimestamp = lastUsedTimestamp;
   }
 
   /**
-   * Getter for the time since this connection was last used.
+   * 获取距最后一次使用多长时间
    *
    * @return - the time since the last use
    */
@@ -170,7 +170,7 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
-   * Getter for the age of the connection.
+   * 获取创建了多长时间
    *
    * @return the age
    */
@@ -212,7 +212,7 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
-   * Allows comparing this connection to another.
+   * 允许将此连接与另一个连接进行比较。
    *
    * @param obj
    *          - the other connection to test for equality
@@ -262,7 +262,7 @@ class PooledConnection implements InvocationHandler {
 
   private void checkConnection() throws SQLException {
     if (!valid) {
-      throw new SQLException("Error accessing PooledConnection. Connection is invalid.");
+      throw new SQLException("访问 PooledConnection 时出错。连接无效。");
     }
   }
 

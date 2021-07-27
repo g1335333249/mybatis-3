@@ -25,6 +25,7 @@ import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.SystemMetaObject;
 
 /**
+ * 非池化数据源工厂
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
  */

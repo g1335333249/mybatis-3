@@ -236,13 +236,13 @@ public class UnpooledDataSource implements DataSource {
         } else {
           driverType = Resources.classForName(driver);
         }
-        // DriverManager requires the driver to be loaded via the system ClassLoader.
+        // DriverManager 要求通过系统 ClassLoader 加载驱动程序。
         // http://www.kfu.com/~nsayer/Java/dyn-jdbc.html
         Driver driverInstance = (Driver) driverType.getDeclaredConstructor().newInstance();
         DriverManager.registerDriver(new DriverProxy(driverInstance));
         registeredDrivers.put(driver, driverInstance);
       } catch (Exception e) {
-        throw new SQLException("Error setting driver on UnpooledDataSource. Cause: " + e);
+        throw new SQLException("在 UnpooledDataSource 上设置驱动程序时出错。原因：" + e);
       }
     }
   }
@@ -314,7 +314,7 @@ public class UnpooledDataSource implements DataSource {
 
   @Override
   public Logger getParentLogger() {
-    // requires JDK version 1.6
+    // 需要 JDK 1.6 版
     return Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
   }
 
