@@ -15,12 +15,16 @@
  */
 package org.apache.ibatis.cache.decorators;
 
+import org.apache.ibatis.cache.Cache;
+import org.apache.ibatis.cache.CacheException;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.ibatis.cache.Cache;
-import org.apache.ibatis.cache.CacheException;
 
 /**
  * <p>简单的阻塞装饰器
@@ -30,10 +34,10 @@ import org.apache.ibatis.cache.CacheException;
  * 这样，其他线程将等获取到该元素的缓存键值而不是访问数据库。
  *
  * <p>就其性质而言，如果使用不当，此实现可能会导致死锁。
- *
+ * <p>
  * 翻译：https://github.com/g1335333249/mybatis-3
- * @author Eduardo Macarron
  *
+ * @author Eduardo Macarron
  */
 public class BlockingCache implements Cache {
 
@@ -87,6 +91,11 @@ public class BlockingCache implements Cache {
     delegate.clear();
   }
 
+  /**
+   * 获取锁
+   *
+   * @param key
+   */
   private void acquireLock(Object key) {
     CountDownLatch newLatch = new CountDownLatch(1);
     while (true) {
@@ -99,7 +108,7 @@ public class BlockingCache implements Cache {
           boolean acquired = latch.await(timeout, TimeUnit.MILLISECONDS);
           if (!acquired) {
             throw new CacheException(
-                "Couldn't get a lock in " + timeout + " for the key " + key + " at the cache " + delegate.getId());
+              "Couldn't get a lock in " + timeout + " for the key " + key + " at the cache " + delegate.getId());
           }
         } else {
           latch.await();
@@ -113,7 +122,7 @@ public class BlockingCache implements Cache {
   private void releaseLock(Object key) {
     CountDownLatch latch = locks.remove(key);
     if (latch == null) {
-      throw new IllegalStateException("Detected an attempt at releasing unacquired lock. This should never happen.");
+      throw new IllegalStateException("检测到试图释放未获得的锁。这不应该发生。");
     }
     latch.countDown();
   }
