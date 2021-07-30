@@ -24,11 +24,10 @@ import org.apache.ibatis.executor.result.ResultMapException;
 import org.apache.ibatis.session.Configuration;
 
 /**
- * The base {@link TypeHandler} for references a generic type.
+ * 用于引用泛型类型的基础 {@link TypeHandler}。
  * <p>
- * Important: Since 3.5.0, This class never call the {@link ResultSet#wasNull()} and
- * {@link CallableStatement#wasNull()} method for handling the SQL {@code NULL} value.
- * In other words, {@code null} value handling should be performed on subclass.
+ * 重要提示：从 3.5.0 开始，此类从不调用 {@link ResultSet#wasNull()} 和 {@link CallableStatement#wasNull()} 方法来处理 SQL {@code NULL} 值。
+ * 换句话说，{@code null} 值处理应该在子类上执行。
  * </p>
  *
  * 翻译：https://github.com/g1335333249/mybatis-3
@@ -39,18 +38,18 @@ import org.apache.ibatis.session.Configuration;
 public abstract class BaseTypeHandler<T> extends TypeReference<T> implements TypeHandler<T> {
 
   /**
-   * @deprecated Since 3.5.0 - See https://github.com/mybatis/mybatis-3/issues/1203. This field will remove future.
+   * @deprecated Since 3.5.0 - See https://github.com/mybatis/mybatis-3/issues/1203. 此字段未来将删除。
    * 过时的，该属性未来将移除
    */
   @Deprecated
   protected Configuration configuration;
 
   /**
-   * Sets the configuration.
+   * 设置配置。
    *
    * @param c
-   *          the new configuration
-   * @deprecated Since 3.5.0 - See https://github.com/mybatis/mybatis-3/issues/1203. This property will remove future.
+   *          新配置
+   * @deprecated Since 3.5.0 - See https://github.com/mybatis/mybatis-3/issues/1203. 此属性未来将删除。
    */
   @Deprecated
   public void setConfiguration(Configuration c) {
@@ -61,22 +60,22 @@ public abstract class BaseTypeHandler<T> extends TypeReference<T> implements Typ
   public void setParameter(PreparedStatement ps, int i, T parameter, JdbcType jdbcType) throws SQLException {
     if (parameter == null) {
       if (jdbcType == null) {
-        throw new TypeException("JDBC requires that the JdbcType must be specified for all nullable parameters.");
+        throw new TypeException("JDBC 要求必须为所有可为空的参数指定 JdbcType。");
       }
       try {
         ps.setNull(i, jdbcType.TYPE_CODE);
       } catch (SQLException e) {
         throw new TypeException("Error setting null for parameter #" + i + " with JdbcType " + jdbcType + " . "
-          + "Try setting a different JdbcType for this parameter or a different jdbcTypeForNull configuration property. "
-          + "Cause: " + e, e);
+          + "尝试为此参数设置不同的 JdbcType 或不同的 jdbcTypeForNull 配置属性。"
+          + "原因: " + e, e);
       }
     } else {
       try {
         setNonNullParameter(ps, i, parameter, jdbcType);
       } catch (Exception e) {
         throw new TypeException("Error setting non null for parameter #" + i + " with JdbcType " + jdbcType + " . "
-          + "Try setting a different JdbcType for this parameter or a different configuration property. "
-          + "Cause: " + e, e);
+          + "尝试为此参数设置不同的 JdbcType 或不同的配置属性。"
+          + "原因: " + e, e);
       }
     }
   }

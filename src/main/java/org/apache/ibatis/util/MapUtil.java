@@ -22,8 +22,8 @@ import java.util.function.Function;
 
 public class MapUtil {
   /**
-   * A temporary workaround for Java 8 specific performance issue JDK-8161372 .<br>
-   * This class should be removed once we drop Java 8 support.
+   * Java 8 特定性能问题 JDK-8161372 的临时解决方法。<br>
+   * 一旦我们放弃对 Java 8 的支持，就应该删除这个类。
    *
    * @see <a href="https://bugs.openjdk.java.net/browse/JDK-8161372">https://bugs.openjdk.java.net/browse/JDK-8161372</a>
    */
@@ -36,7 +36,7 @@ public class MapUtil {
   }
 
   /**
-   * Map.entry(key, value) alternative for Java 8.
+   * Map.entry(key, value) Java 8 的替代品。
    */
   public static <K, V> Entry<K, V> entry(K key, V value) {
     return new AbstractMap.SimpleImmutableEntry<>(key, value);
