@@ -32,20 +32,20 @@ public class LanguageDriverRegistry {
 
   public void register(Class<? extends LanguageDriver> cls) {
     if (cls == null) {
-      throw new IllegalArgumentException("null is not a valid Language Driver");
+      throw new IllegalArgumentException("null 不是有效的语言驱动程序");
     }
     MapUtil.computeIfAbsent(LANGUAGE_DRIVER_MAP, cls, k -> {
       try {
         return k.getDeclaredConstructor().newInstance();
       } catch (Exception ex) {
-        throw new ScriptingException("Failed to load language driver for " + cls.getName(), ex);
+        throw new ScriptingException("无法加载语言驱动程序 " + cls.getName(), ex);
       }
     });
   }
 
   public void register(LanguageDriver instance) {
     if (instance == null) {
-      throw new IllegalArgumentException("null is not a valid Language Driver");
+      throw new IllegalArgumentException("null 不是有效的语言驱动程序");
     }
     Class<? extends LanguageDriver> cls = instance.getClass();
     if (!LANGUAGE_DRIVER_MAP.containsKey(cls)) {

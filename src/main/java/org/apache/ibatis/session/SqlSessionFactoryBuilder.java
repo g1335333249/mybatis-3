@@ -26,7 +26,7 @@ import org.apache.ibatis.executor.ErrorContext;
 import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
 
 /**
- * Builds {@link SqlSession} instances.
+ * 构建 {@link SqlSession} 实例。
  *
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
@@ -50,13 +50,13 @@ public class SqlSessionFactoryBuilder {
       XMLConfigBuilder parser = new XMLConfigBuilder(reader, environment, properties);
       return build(parser.parse());
     } catch (Exception e) {
-      throw ExceptionFactory.wrapException("Error building SqlSession.", e);
+      throw ExceptionFactory.wrapException("构建 SqlSession 时出错。", e);
     } finally {
       ErrorContext.instance().reset();
       try {
         reader.close();
       } catch (IOException e) {
-        // Intentionally ignore. Prefer previous error.
+        // 故意无视。更喜欢以前的错误。
       }
     }
   }
@@ -78,13 +78,13 @@ public class SqlSessionFactoryBuilder {
       XMLConfigBuilder parser = new XMLConfigBuilder(inputStream, environment, properties);
       return build(parser.parse());
     } catch (Exception e) {
-      throw ExceptionFactory.wrapException("Error building SqlSession.", e);
+      throw ExceptionFactory.wrapException("构建 SqlSession 时出错。", e);
     } finally {
       ErrorContext.instance().reset();
       try {
         inputStream.close();
       } catch (IOException e) {
-        // Intentionally ignore. Prefer previous error.
+        // 故意无视。更喜欢以前的错误。
       }
     }
   }

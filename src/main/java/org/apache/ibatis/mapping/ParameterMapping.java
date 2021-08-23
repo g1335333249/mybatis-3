@@ -109,9 +109,9 @@ public class ParameterMapping {
     private void validate() {
       if (ResultSet.class.equals(parameterMapping.javaType)) {
         if (parameterMapping.resultMapId == null) {
-          throw new IllegalStateException("Missing resultmap in property '"
+          throw new IllegalStateException("缺少结果映射在属性 '"
               + parameterMapping.property + "'.  "
-              + "Parameters of type java.sql.ResultSet require a resultmap.");
+              + "java.sql.ResultSet 类型的参数需要一个结果映射。");
         }
       } else {
         if (parameterMapping.typeHandler == null) {
@@ -137,7 +137,7 @@ public class ParameterMapping {
   }
 
   /**
-   * Used for handling output of callable statements.
+   * 用于处理可调用语句的输出。
    *
    * @return the mode
    */
@@ -146,7 +146,7 @@ public class ParameterMapping {
   }
 
   /**
-   * Used for handling output of callable statements.
+   * 用于处理可调用语句的输出。
    *
    * @return the java type
    */
@@ -155,7 +155,7 @@ public class ParameterMapping {
   }
 
   /**
-   * Used in the UnknownTypeHandler in case there is no handler for the property type.
+   * 在 UnknownTypeHandler 中使用，以防属性类型没有处理程序。
    *
    * @return the jdbc type
    */
@@ -164,7 +164,7 @@ public class ParameterMapping {
   }
 
   /**
-   * Used for handling output of callable statements.
+   * 用于处理可调用语句的输出。
    *
    * @return the numeric scale
    */
@@ -173,7 +173,7 @@ public class ParameterMapping {
   }
 
   /**
-   * Used when setting parameters to the PreparedStatement.
+   * 在为 PreparedStatement 设置参数时使用。
    *
    * @return the type handler
    */
@@ -182,7 +182,7 @@ public class ParameterMapping {
   }
 
   /**
-   * Used for handling output of callable statements.
+   * 用于处理可调用语句的输出。
    *
    * @return the result map id
    */
@@ -191,7 +191,7 @@ public class ParameterMapping {
   }
 
   /**
-   * Used for handling output of callable statements.
+   * 用于处理可调用语句的输出。
    *
    * @return the jdbc type name
    */

@@ -266,7 +266,7 @@ public class SqlSessionManager implements SqlSessionFactory, SqlSession {
   public Connection getConnection() {
     final SqlSession sqlSession = localSqlSession.get();
     if (sqlSession == null) {
-      throw new SqlSessionException("Error:  Cannot get connection.  No managed session is started.");
+      throw new SqlSessionException("Error：无法获得连接。没有启动受管会话。");
     }
     return sqlSession.getConnection();
   }
@@ -275,7 +275,7 @@ public class SqlSessionManager implements SqlSessionFactory, SqlSession {
   public void clearCache() {
     final SqlSession sqlSession = localSqlSession.get();
     if (sqlSession == null) {
-      throw new SqlSessionException("Error:  Cannot clear the cache.  No managed session is started.");
+      throw new SqlSessionException("Error: 无法清除缓存。没有启动受管会话。");
     }
     sqlSession.clearCache();
   }
@@ -284,7 +284,7 @@ public class SqlSessionManager implements SqlSessionFactory, SqlSession {
   public void commit() {
     final SqlSession sqlSession = localSqlSession.get();
     if (sqlSession == null) {
-      throw new SqlSessionException("Error:  Cannot commit.  No managed session is started.");
+      throw new SqlSessionException("Error: 不能提交。没有启动受管会话。");
     }
     sqlSession.commit();
   }
@@ -293,7 +293,7 @@ public class SqlSessionManager implements SqlSessionFactory, SqlSession {
   public void commit(boolean force) {
     final SqlSession sqlSession = localSqlSession.get();
     if (sqlSession == null) {
-      throw new SqlSessionException("Error:  Cannot commit.  No managed session is started.");
+      throw new SqlSessionException("Error: 不能提交。没有启动受管会话。");
     }
     sqlSession.commit(force);
   }
@@ -302,7 +302,7 @@ public class SqlSessionManager implements SqlSessionFactory, SqlSession {
   public void rollback() {
     final SqlSession sqlSession = localSqlSession.get();
     if (sqlSession == null) {
-      throw new SqlSessionException("Error:  Cannot rollback.  No managed session is started.");
+      throw new SqlSessionException("Error: 无法回滚。没有启动受管会话。");
     }
     sqlSession.rollback();
   }
@@ -311,7 +311,7 @@ public class SqlSessionManager implements SqlSessionFactory, SqlSession {
   public void rollback(boolean force) {
     final SqlSession sqlSession = localSqlSession.get();
     if (sqlSession == null) {
-      throw new SqlSessionException("Error:  Cannot rollback.  No managed session is started.");
+      throw new SqlSessionException("Error: 无法回滚。没有启动受管会话。");
     }
     sqlSession.rollback(force);
   }
@@ -320,7 +320,7 @@ public class SqlSessionManager implements SqlSessionFactory, SqlSession {
   public List<BatchResult> flushStatements() {
     final SqlSession sqlSession = localSqlSession.get();
     if (sqlSession == null) {
-      throw new SqlSessionException("Error:  Cannot rollback.  No managed session is started.");
+      throw new SqlSessionException("Error: 无法回滚。没有启动受管会话。");
     }
     return sqlSession.flushStatements();
   }
@@ -329,7 +329,7 @@ public class SqlSessionManager implements SqlSessionFactory, SqlSession {
   public void close() {
     final SqlSession sqlSession = localSqlSession.get();
     if (sqlSession == null) {
-      throw new SqlSessionException("Error:  Cannot close.  No managed session is started.");
+      throw new SqlSessionException("Error: 无法关闭。没有启动受管会话。");
     }
     try {
       sqlSession.close();

@@ -130,7 +130,7 @@ public class MetaObject {
       MetaObject metaValue = metaObjectForProperty(prop.getIndexedName());
       if (metaValue == SystemMetaObject.NULL_META_OBJECT) {
         if (value == null) {
-          // don't instantiate child path if value is null
+          // 如果值为空，则不要实例化子路径
           return;
         } else {
           metaValue = objectWrapper.instantiatePropertyValue(name, prop, objectFactory);

@@ -20,7 +20,7 @@ import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.mapping.MappedStatement;
 
 /**
- * Specify the behavior when detects an unknown column (or unknown property type) of automatic mapping target.
+ * 指定检测到自动映射目标的未知列（或未知属性类型）时的行为。
  *
  * @since 3.4.0
  * 翻译：https://github.com/g1335333249/mybatis-3
@@ -29,18 +29,18 @@ import org.apache.ibatis.mapping.MappedStatement;
 public enum AutoMappingUnknownColumnBehavior {
 
   /**
-   * Do nothing (Default).
+   * 什么都不做（默认）。
    */
   NONE {
     @Override
     public void doAction(MappedStatement mappedStatement, String columnName, String property, Class<?> propertyType) {
-      // do nothing
+      // 什么都不做
     }
   },
 
   /**
-   * Output warning log.
-   * Note: The log level of {@code 'org.apache.ibatis.session.AutoMappingUnknownColumnBehavior'} must be set to {@code WARN}.
+   * 输出警告日志。
+   * Note: {@code 'org.apache.ibatis.session.AutoMappingUnknownColumnBehavior'} 的日志级别必须设置为 {@code WARN}。
    */
   WARNING {
     @Override
@@ -50,8 +50,8 @@ public enum AutoMappingUnknownColumnBehavior {
   },
 
   /**
-   * Fail mapping.
-   * Note: throw {@link SqlSessionException}.
+   * 映射失败。
+   * Note: 抛出 {@link SqlSessionException}。
    */
   FAILING {
     @Override
@@ -61,25 +61,25 @@ public enum AutoMappingUnknownColumnBehavior {
   };
 
   /**
-   * Perform the action when detects an unknown column (or unknown property type) of automatic mapping target.
-   * @param mappedStatement current mapped statement
-   * @param columnName column name for mapping target
-   * @param propertyName property name for mapping target
-   * @param propertyType property type for mapping target (If this argument is not null, {@link org.apache.ibatis.type.TypeHandler} for property type is not registered)
-     */
+   * 当检测到自动映射目标的未知列（或未知属性类型）时执行该操作。
+   * @param mappedStatement 当前映射语句
+   * @param columnName 映射目标的列名
+   * @param propertyName 映射目标的属性名称
+   * @param propertyType 映射目标的属性类型（如果此参数不为空，则未注册属性类型的{@link org.apache.ibatis.type.TypeHandler}）
+   */
   public abstract void doAction(MappedStatement mappedStatement, String columnName, String propertyName, Class<?> propertyType);
 
   /**
-   * build error message.
+   * 构建错误消息。
    */
   private static String buildMessage(MappedStatement mappedStatement, String columnName, String property, Class<?> propertyType) {
-    return new StringBuilder("Unknown column is detected on '")
+    return new StringBuilder("检测到未知列 '")
       .append(mappedStatement.getId())
-      .append("' auto-mapping. Mapping parameters are ")
+      .append("' 自动映射. 映射参数是 ")
       .append("[")
-      .append("columnName=").append(columnName)
-      .append(",").append("propertyName=").append(property)
-      .append(",").append("propertyType=").append(propertyType != null ? propertyType.getName() : null)
+      .append("列名=").append(columnName)
+      .append(",").append("属性名称=").append(property)
+      .append(",").append("属性类型=").append(propertyType != null ? propertyType.getName() : null)
       .append("]")
       .toString();
   }

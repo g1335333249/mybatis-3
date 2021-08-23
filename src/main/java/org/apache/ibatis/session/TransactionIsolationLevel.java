@@ -45,8 +45,8 @@ public enum TransactionIsolationLevel {
   SERIALIZABLE(Connection.TRANSACTION_SERIALIZABLE),
   /**
    * SQL Server 的非标准隔离级别
-   * A non-standard isolation level for Microsoft SQL Server.
-   * Defined in the SQL Server JDBC driver {@link com.microsoft.sqlserver.jdbc.ISQLServerConnection}
+   * Microsoft SQL Server 的非标准隔离级别。
+   * 在 SQL Server JDBC 驱动程序中定义 {@link com.microsoft.sqlserver.jdbc.ISQLServerConnection}
    *
    * @since 3.5.6
    */

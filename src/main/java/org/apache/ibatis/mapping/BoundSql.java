@@ -24,12 +24,10 @@ import org.apache.ibatis.reflection.property.PropertyTokenizer;
 import org.apache.ibatis.session.Configuration;
 
 /**
- * An actual SQL String got from an {@link SqlSource} after having processed any dynamic content.
- * The SQL may have SQL placeholders "?" and an list (ordered) of an parameter mappings
- * with the additional information for each parameter (at least the property name of the input object to read
- * the value from).
+ * 处理任何动态内容后从 {@link SqlSource} 获得的实际 SQL 字符串。
+ * SQL 可能有 SQL 占位符“？”和一个参数映射列表（有序）以及每个参数的附加信息（至少是要从中读取值的输入对象的属性名称）。
  * <p>
- * Can also have additional parameters that are created by the dynamic language (for loops, bind...).
+ * 还可以具有由动态语言（for 循环、绑定...）创建的附加参数。
  *
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin

@@ -19,8 +19,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * Wraps a database connection.
- * Handles the connection lifecycle that comprises: its creation, preparation, commit/rollback and close.
+ * 包装一个数据库连接。
+ * 处理连接生命周期，包括：创建、准备、提交回滚和关闭。
  *
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
@@ -28,40 +28,40 @@ import java.sql.SQLException;
 public interface Transaction {
 
   /**
-   * Retrieve inner database connection.
+   * 检索内部数据库连接。
    * @return DataBase connection
    * @throws SQLException
-   *           the SQL exception
+   *           SQL异常
    */
   Connection getConnection() throws SQLException;
 
   /**
-   * Commit inner database connection.
+   * 提交内部数据库连接。
    * @throws SQLException
-   *           the SQL exception
+   *           SQL异常
    */
   void commit() throws SQLException;
 
   /**
-   * Rollback inner database connection.
+   * 回滚内部数据库连接。
    * @throws SQLException
-   *           the SQL exception
+   *           SQL异常
    */
   void rollback() throws SQLException;
 
   /**
-   * Close inner database connection.
+   * 关闭内部数据库连接。
    * @throws SQLException
-   *           the SQL exception
+   *           SQL异常
    */
   void close() throws SQLException;
 
   /**
-   * Get transaction timeout if set.
+   * 如果设置，则获取事务超时。
    *
-   * @return the timeout
+   * @return 超时
    * @throws SQLException
-   *           the SQL exception
+   *           SQL异常
    */
   Integer getTimeout() throws SQLException;
 

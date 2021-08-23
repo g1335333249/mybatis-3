@@ -27,10 +27,10 @@ import org.apache.ibatis.transaction.Transaction;
 import org.apache.ibatis.transaction.TransactionException;
 
 /**
- * {@link Transaction} that makes use of the JDBC commit and rollback facilities directly.
- * It relies on the connection retrieved from the dataSource to manage the scope of the transaction.
- * Delays connection retrieval until getConnection() is called.
- * Ignores commit or rollback requests when autocommit is on.
+ * {@link Transaction} 直接使用 JDBC 提交和回滚工具。
+ * 它依赖从数据源检索到的连接来管理事务的范围。
+ * 延迟连接检索，直到调用 getConnection()。
+ * 自动提交打开时忽略提交或回滚请求。
  *
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
@@ -68,7 +68,7 @@ public class JdbcTransaction implements Transaction {
   public void commit() throws SQLException {
     if (connection != null && !connection.getAutoCommit()) {
       if (log.isDebugEnabled()) {
-        log.debug("Committing JDBC Connection [" + connection + "]");
+        log.debug("提交 JDBC 连接 [" + connection + "]");
       }
       connection.commit();
     }
@@ -78,7 +78,7 @@ public class JdbcTransaction implements Transaction {
   public void rollback() throws SQLException {
     if (connection != null && !connection.getAutoCommit()) {
       if (log.isDebugEnabled()) {
-        log.debug("Rolling back JDBC Connection [" + connection + "]");
+        log.debug("回滚 JDBC 连接 [" + connection + "]");
       }
       connection.rollback();
     }
@@ -89,7 +89,7 @@ public class JdbcTransaction implements Transaction {
     if (connection != null) {
       resetAutoCommit();
       if (log.isDebugEnabled()) {
-        log.debug("Closing JDBC Connection [" + connection + "]");
+        log.debug("关闭 JDBC 连接 [" + connection + "]");
       }
       connection.close();
     }
@@ -99,14 +99,13 @@ public class JdbcTransaction implements Transaction {
     try {
       if (connection.getAutoCommit() != desiredAutoCommit) {
         if (log.isDebugEnabled()) {
-          log.debug("Setting autocommit to " + desiredAutoCommit + " on JDBC Connection [" + connection + "]");
+          log.debug("将自动提交设置为" + desiredAutoCommit + " 在 JDBC 连接上 [" + connection + "]");
         }
         connection.setAutoCommit(desiredAutoCommit);
       }
     } catch (SQLException e) {
-      // Only a very poorly implemented driver would fail here,
-      // and there's not much we can do about that.
-      throw new TransactionException("Error configuring AutoCommit.  "
+      // 只有一个非常糟糕的驱动程序会在这里失败，我们对此无能为力。
+      throw new TransactionException("配置 AutoCommit 时出错。  "
           + "Your driver may not support getAutoCommit() or setAutoCommit(). "
           + "Requested setting: " + desiredAutoCommit + ".  Cause: " + e, e);
     }

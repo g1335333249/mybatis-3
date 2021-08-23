@@ -26,10 +26,10 @@ import org.apache.ibatis.session.TransactionIsolationLevel;
 import org.apache.ibatis.transaction.Transaction;
 
 /**
- * {@link Transaction} that lets the container manage the full lifecycle of the transaction.
- * Delays connection retrieval until getConnection() is called.
- * Ignores all commit or rollback requests.
- * By default, it closes the connection but can be configured not to do it.
+ * {@link Transaction} 让容器管理事务的整个生命周期。
+ * 延迟连接检索，直到调用 getConnection()。
+ * 忽略所有提交或回滚请求。
+ * 默认情况下，它关闭连接，但可以配置为不这样做。
  *
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
@@ -66,19 +66,19 @@ public class ManagedTransaction implements Transaction {
 
   @Override
   public void commit() throws SQLException {
-    // Does nothing
+    // 什么都不做
   }
 
   @Override
   public void rollback() throws SQLException {
-    // Does nothing
+    // 什么都不做
   }
 
   @Override
   public void close() throws SQLException {
     if (this.closeConnection && this.connection != null) {
       if (log.isDebugEnabled()) {
-        log.debug("Closing JDBC Connection [" + this.connection + "]");
+        log.debug("关闭 JDBC 连接 [" + this.connection + "]");
       }
       this.connection.close();
     }
@@ -86,7 +86,7 @@ public class ManagedTransaction implements Transaction {
 
   protected void openConnection() throws SQLException {
     if (log.isDebugEnabled()) {
-      log.debug("Opening JDBC Connection");
+      log.debug("打开 JDBC 连接");
     }
     this.connection = this.dataSource.getConnection();
     if (this.level != null) {

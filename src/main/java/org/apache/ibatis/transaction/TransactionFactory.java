@@ -23,7 +23,7 @@ import javax.sql.DataSource;
 import org.apache.ibatis.session.TransactionIsolationLevel;
 
 /**
- * Creates {@link Transaction} instances.
+ * 创建 {@link Transaction} 实例。
  *
  * 翻译：https://github.com/g1335333249/mybatis-3
  * @author Clinton Begin
@@ -40,18 +40,18 @@ public interface TransactionFactory {
   }
 
   /**
-   * Creates a {@link Transaction} out of an existing connection.
-   * @param conn Existing database connection
+   * 从现有连接创建 {@link Transaction}。
+   * @param conn 现有数据库连接
    * @return Transaction
    * @since 3.1.0
    */
   Transaction newTransaction(Connection conn);
 
   /**
-   * Creates a {@link Transaction} out of a datasource.
-   * @param dataSource DataSource to take the connection from
-   * @param level Desired isolation level
-   * @param autoCommit Desired autocommit
+   * 从数据源创建 {@link Transaction}。
+   * @param dataSource 从中获取连接的数据源
+   * @param level 所需的隔离级别
+   * @param autoCommit 是否自动提交
    * @return Transaction
    * @since 3.1.0
    */
